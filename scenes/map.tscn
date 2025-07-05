@@ -245,10 +245,11 @@ tile_set = SubResource("TileSet_be0no")
 
 [node name="overplayer" type="TileMapLayer" parent="mapa"]
 z_index = 6
-tile_map_data = PackedByteArray("AAD7//r/AAAHAAMAAAD7//3/AAAHAAIAAAD8//3/AAAIAAIAAAD9//3/AAAIAAIAAAD+//3/AAAIAAIAAAD///3/AAAIAAIAAAAAAP3/AAAIAAIAAAABAP3/AAAJAAMAAAADAP3/AAAIAAMAAAAEAP3/AAAIAAIAAAAFAP3/AAAJAAIAAAAFAPz/AAAJAAEAAAAFAPv/AAAJAAEAAAAFAPr/AAAJAAEAAAAFAPn/AAAJAAEAAAD7//z/AAAHAAEAAAD7//v/AAAHAAEAAAA=")
+tile_map_data = PackedByteArray("AAD7//r/AAAHAAMAAAD7//3/AAAHAAIAAAD8//3/AAAIAAIAAAD9//3/AAAIAAIAAAD+//3/AAAIAAIAAAD///3/AAAIAAIAAAAAAP3/AAAIAAIAAAABAP3/AAAJAAMAAAADAP3/AAAIAAMAAAAEAP3/AAAIAAIAAAAFAP3/AAAJAAIAAAAFAPz/AAAJAAEAAAAFAPv/AAAJAAEAAAAFAPr/AAAJAAEAAAAFAPn/AAAJAAEAAAD7//z/AAAHAAEAAAD7//v/AAAHAAEAAAAFAPj/AAAJAAEAAAAFAPf/AAAJAAEAAAAFAPb/AAAJAAEAAAD7//f/AAAHAAEAAAD7//b/AAAHAAEAAAA=")
 tile_set = SubResource("TileSet_mlgqr")
 
 [node name="Housecollision" type="StaticBody2D" parent="mapa"]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="mapa/Housecollision"]
 z_index = 6
@@ -259,6 +260,7 @@ z_index = 6
 polygon = PackedVector2Array(48, -32, 48, -39, 91, -39, 91, -48, 91, -155, -75, -155, -75, -117, -80, -117, -80, -160, 96, -160, 96, -32)
 
 [node name="watercollision" type="StaticBody2D" parent="mapa"]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="mapa/watercollision"]
 polygon = PackedVector2Array(-560, 483, -306, 483, -300, 478, -301, 467, -288, 467, -284, 464, -285, 387, -271, 387, -268, 384, -268, 322, -16, 322, -13, 335, -12, 413, 12, 412, 12, 336, 35, 336, 35, 414, 61, 414, 61, 336, 83, 336, 83, 350, 109, 350, 108, 336, 112, 323, 250, 322, 254, 326, 254, 368, 257, 371, 394, 369, 397, 373, 398, 384, 400, 386, 413, 386, 414, 399, 417, 402, 428, 402, 429, 404, 430, 417, 433, 419, 497, 366, 556, 343, 581, 335, 594, 319, 610, 312, 643, 302, 640, 300, 628, 301, 626, 284, 612, 284, 611, 269, 596, 268, 595, 253, 578, 252, 579, 236, 564, 236, 563, 220, 548, 220, 547, 204, 532, 204, 531, 188, 516, 188, 515, 173, 498, 172, 499, 155, 484, 156, 483, 140, 467, 140, 467, -32, 515, -32, 515, 62, 542, 62, 541, -32, 543, -33, 544, -59, 543, -158, 547, -160, 548, -250, 549, -253, 594, -252, 596, -255, 595, -300, 597, -302, 656, -302, 660, -305, 659, -458, 963, -454, 1002, 405, 809, 595, 259, 619, -557, 596)

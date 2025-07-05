@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bx5n42qcksnv4"]
+[gd_scene load_steps=20 format=3 uid="uid://bx5n42qcksnv4"]
 
 [ext_resource type="Script" uid="uid://bfvuha1yjv1um" path="res://scripts/Objects/player.gd" id="1_a8lix"]
 [ext_resource type="Texture2D" uid="uid://vybcktffr1ej" path="res://assets/Sprites/fisherman_sheet.png" id="2_2147m"]
+[ext_resource type="PackedScene" uid="uid://dx8cpmui3u2bj" path="res://scenes/objects/FishOnHand.tscn" id="3_h5uus"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2147m"]
 radius = 3.0
@@ -152,6 +153,12 @@ shape = SubResource("CapsuleShape2D_2147m")
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_4c2uj")
 animation = &"show_pose"
+frame_progress = 0.776431
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="FishOnHand" parent="." instance=ExtResource("3_h5uus")]
+z_index = 9
+position = Vector2(8, -10)
+rotation = 1.59372

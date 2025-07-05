@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx8cpmui3u2bj"]
+
+[ext_resource type="Script" uid="uid://bwgk0ywhscnn0" path="res://scripts/Objects/FishOnHand.gd" id="1_lbhua"]
+
+[node name="FishOnHand" type="Node2D"]
+script = ExtResource("1_lbhua")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.00158172
+offset = Vector2(8, 0)

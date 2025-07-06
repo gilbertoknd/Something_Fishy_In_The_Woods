@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bx5n42qcksnv4"]
+[gd_scene load_steps=27 format=3 uid="uid://bx5n42qcksnv4"]
 
 [ext_resource type="Script" uid="uid://bfvuha1yjv1um" path="res://scripts/Objects/player.gd" id="1_a8lix"]
 [ext_resource type="Texture2D" uid="uid://vybcktffr1ej" path="res://assets/Sprites/fisherman_sheet.png" id="2_2147m"]
@@ -173,6 +173,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rlf8"]
+size = Vector2(22, 31.5)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_a8lix")
 
@@ -198,3 +201,9 @@ position = Vector2(0, -33)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_dunks")
 animation = &"Arrows"
+
+[node name="CollisionChecker" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionChecker"]
+position = Vector2(1, 2.25)
+shape = SubResource("RectangleShape2D_2rlf8")

@@ -6,9 +6,12 @@ var current_action := "none"
 var is_fishing := false
 var can_move := true
 
+
 @onready var fishOnHand := $FishOnHand
 @onready var sprite := $AnimatedSprite2D
 @onready var Arrows := $Arrows
+@onready var water_checker := $CollisionChecker
+
 func _ready():
 	Global.player=self
 	Arrows.visible= false
@@ -47,7 +50,7 @@ func _physics_process(delta):
 	if Input.is_action_just_released("Pose"):
 		current_action="none"
 	
-	if Input.is_action_just_pressed("Clique_Esquerdo") and not current_action in ["fish_on_bait","in_fish_minigame"]:
+	if Input.is_action_just_pressed("Clique_Esquerdo") and not current_action in ["fish_on_bait","in_fish_minigame"]and is_over_water():
 		is_fishing=true
 		current_action="fishing"
 
@@ -109,3 +112,12 @@ func play_animation():
 		
 func get_current_action()->String:
 	return current_action
+
+func is_over_water() -> bool:
+	var areas = water_checker.get_overlapping_areas()
+	if areas!=null:
+		for area in areas:
+			if area.is_in_group("WaterBody"):
+				return true
+	print("tem nem água zé")
+	return false

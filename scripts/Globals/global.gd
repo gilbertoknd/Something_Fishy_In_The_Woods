@@ -35,8 +35,9 @@ func _process(delta):
 					trigger_fish_on_bait()
 
 		"fish_on_bait":
-			start_minigame()
-			player.current_action="in_fish_minigame"
+			if Input.is_action_pressed("Clique_Esquerdo"):
+				start_minigame()
+
 
 		"in_fish_minigame":
 			handle_minigame(delta)
@@ -90,7 +91,7 @@ func handle_minigame(delta):
 	# Reduz escala ao longo do tempo
 	var arrow_sprite = player.get_node("Arrows") as AnimatedSprite2D
 	var t = reaction_timer / reaction_timeout
-	arrow_sprite.scale = Vector2(1 - 0.5 * t, 1 - 0.5 * t)
+	arrow_sprite.scale = Vector2(1 - 0.7 * t, 1 - 0.7 * t)
 
 	if reaction_timer > reaction_timeout:
 		print("Tempo esgotado! Perdeu o peixe.")

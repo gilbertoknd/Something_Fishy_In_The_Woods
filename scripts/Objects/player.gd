@@ -8,8 +8,10 @@ var can_move := true
 
 @onready var fishOnHand := $FishOnHand
 @onready var sprite := $AnimatedSprite2D
-
+@onready var Arrows := $Arrows
 func _ready():
+	Global.player=self
+	Arrows.visible= false
 	fishOnHand.visible = false  # Esconde o peixe ao iniciar
 
 func _physics_process(delta):
@@ -44,19 +46,30 @@ func _physics_process(delta):
 
 	if Input.is_action_just_released("Pose"):
 		current_action="none"
+	
+	if Input.is_action_just_pressed("Clique_Esquerdo") and not current_action in ["fish_on_bait","in_fish_minigame"]:
+		is_fishing=true
+		current_action="fishing"
 
+
+		
+	if not current_action in ["fish_on_bait","in_fish_minigame", "fishing"]:
+		is_fishing = false
+		
 	if input_vec != Vector2.ZERO:
 		current_action = "moving"
 		input_vec = input_vec.normalized()
 		velocity = input_vec * SPEED
 	else:
 		velocity = Vector2.ZERO
-		if not current_action in ["posing", "fishing", "sleeping"]:
+		if not current_action in ["posing","fish_on_bait","in_fish_minigame", "fishing", "sleeping"]:
 			current_action = "none"
 
+
+		
 	move_and_slide()
 	play_animation()
-
+	
 	# mostra o peixe só quando estiver posando
 	fishOnHand.visible = current_action == "posing"
 
@@ -68,6 +81,19 @@ func play_animation():
 		can_move=false
 		sprite.play("show_pose")
 		
+	if current_action =="fishing":
+		can_move=false
+		sprite.play("Idle_fishing")
+	
+	if current_action =="fish_on_bait":
+		can_move=false
+		sprite.play("alert_fishing")
+		
+	if current_action =="in_fish_minigame":
+		can_move=false
+		sprite.play("pull_fishing")
+	
+	
 	if current_action =="moving":
 		match current_dir:
 			"right":
@@ -80,3 +106,6 @@ func play_animation():
 				sprite.play("walk")
 	if current_action=="none":
 		sprite.play("Idle_front")
+		
+func get_current_action()->String:
+	return current_action

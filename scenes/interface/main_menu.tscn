@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwu7v8anmhabo"]
+
+[ext_resource type="Texture2D" uid="uid://gsu1stvkmhei" path="res://assets/Sprites/logo_big_res.png" id="1_1mgp1"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_qnmr3"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qnmr3")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.116127, 0.116127, 0.116127, 1)
+
+[node name="ListraVerde" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 2.0
+offset_right = 467.0
+offset_bottom = 648.0
+color = Color(0.705882, 0.72549, 0.196078, 1)
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 308.0
+offset_right = 466.0
+offset_bottom = 568.0
+metadata/_edit_group_ = true
+
+[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="IniciarButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Iniciar"
+
+[node name="ConfigButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Configurações"
+
+[node name="SairButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Sair"
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 104.0
+offset_right = 1132.0
+offset_bottom = 287.0
+texture = ExtResource("1_1mgp1")
+expand_mode = 3
+
+[node name="Devs" type="Label" parent="."]
+layout_mode = 0
+offset_left = 748.0
+offset_top = 613.0
+offset_right = 1140.0
+offset_bottom = 636.0
+text = "Desenvolvido por João Maria e Gilberto Rodrigues.
+"
+
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/IniciarButton" to="." method="_on_iniciar_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/ConfigButton" to="." method="_on_config_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/SairButton" to="." method="_on_sair_button_button_up"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d3rik75njvhjc" path="res://assets/Tilemaps/placeholder_TL.png" id="1_4xfga"]
 [ext_resource type="PackedScene" uid="uid://bx5n42qcksnv4" path="res://scenes/objects/player.tscn" id="1_paxxb"]
-[ext_resource type="PackedScene" uid="uid://phgr6i7uxvvf" path="res://scenes/objects/waterBody.tscn" id="3_gldc4"]
+[ext_resource type="PackedScene" uid="uid://b4oka4qa84vgf" path="res://scenes/objects/waterBody.tscn" id="3_gldc4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paxxb"]
 texture = ExtResource("1_4xfga")

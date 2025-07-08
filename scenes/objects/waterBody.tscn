@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://phgr6i7uxvvf"]
+[gd_scene load_steps=2 format=3 uid="uid://b4oka4qa84vgf"]
 
-[ext_resource type="Script" uid="uid://mlwymeht64bv" path="res://scripts/Objects/water_body.gd" id="1_6qip4"]
+[ext_resource type="Script" path="res://scripts/Objects/water_body.gd" id="1_6qip4"]
 
 [node name="WaterBody" type="Area2D" groups=["WaterBody"]]
 script = ExtResource("1_6qip4")

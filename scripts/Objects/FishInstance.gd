@@ -13,7 +13,7 @@ func _init(_fish_id: String = "", peso: float = 0.0, qualidade: int = 0):
 		# construtor padrão aleatório
 		var keys = FishDatabase.DATA.keys()
 		fish_id = keys[randi() % keys.size()]  # peixe aleatório do banco
-		weight = randf_range(0.5, 6.0)         # peso aleatório, ajuste os valores conforme desejar
+		weight = randf_range(0.5, 3.0)         # peso aleatório, ajuste os valores conforme desejar
 		quality = randi() % 6 + 1              # qualidade aleatória entre 1 e 6
 	else:
 		fish_id = _fish_id

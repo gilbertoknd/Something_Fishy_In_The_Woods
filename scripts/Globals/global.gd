@@ -117,6 +117,8 @@ func end_minigame(success: bool):
 		last_caught_fish = current_fish_on_bait
 		caught_fish.append(last_caught_fish)
 		player_points += last_caught_fish.price
-		print("Pescou um peixe de R$ %.2f! Total de pontos: %d" % [last_caught_fish.price, player_points])
+		current_fish_on_bait=null
+		player.get_node("FishOnHand").set_fish(last_caught_fish)
+		print(("Pescou um peixe ")+last_caught_fish.get_fish_name()+ (" de R$ %.2f! Total de pontos: %d") % [last_caught_fish.price, player_points])
 	else:
 		print("O peixe escapou!")

@@ -19,7 +19,7 @@ func _ready():
 
 func _physics_process(delta):
 	var input_vec := Vector2.ZERO
-	if not current_action in ["posing", "fishing", "sleeping"]:
+	if not current_action in ["posing","in_fish_minigame", "sleeping"]:
 		can_move=true
 	if can_move:
 		if Input.is_action_pressed("Move_right"):

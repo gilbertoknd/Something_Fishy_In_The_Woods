@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2ymb32cvd2pf"]
+
+[ext_resource type="Script" path="res://scripts/fish_panel.gd" id="1_33xm5"]
+[ext_resource type="Texture2D" uid="uid://b3vi0cbphbp7v" path="res://assets/Sprites/fishs/BAGRE.png" id="1_k1noo"]
+
+[node name="FishPanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 416.0
+offset_top = 124.0
+offset_right = -416.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_33xm5")
+
+[node name="FishLogo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_right = -121.0
+offset_bottom = 15.0
+grow_horizontal = 2
+scale = Vector2(6, 6)
+pivot_offset = Vector2(-9, -12)
+texture = ExtResource("1_k1noo")
+
+[node name="FishInfos" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -200.0
+offset_right = 140.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[center]
+Nome:  Bagre,
+Raridade: Normal ★, 
+Descrição: Peixe de fundo com bigodes distintos.[/center]"
+scroll_active = false
+language = "pt_BR"

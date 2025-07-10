@@ -18,11 +18,11 @@ const DATA = {
 		"sprite": preload("res://assets/Sprites/fishs/TRUTA.png"),
 		"description": "Peixe colorido comum em agua doce."
 	},
-		"ATHANASIOS": {
+	"ATHANASIOS": {
 		"name": "Athanasios",
 		"raridade":"Histórico ★★★★★★", 
 		"sprite": preload("res://assets/Sprites/fishs/thanos.png"),
 		"description": "Esse peixe dá aula de fundamentos de matematica para a computação e ainda joga basquete."
 	}
-	
+
 }

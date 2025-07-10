@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://cr0n3xu0kckh"]
+[gd_scene load_steps=3 format=3 uid="uid://cr0n3xu0kckh"]
+
+[ext_resource type="Script" path="res://scripts/codex.gd" id="1_bh2jk"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_4850o"]
 
 [node name="Codex" type="Control"]
 layout_mode = 3
@@ -7,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bh2jk")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -27,8 +32,9 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button" type="Button" parent="Panel/GridContainer"]
+[node name="Button" type="TextureButton" parent="Panel/GridContainer"]
 layout_mode = 2
+texture_normal = SubResource("ImageTexture_4850o")
 
 [node name="Panel" type="Panel" parent="Panel"]
 layout_mode = 1

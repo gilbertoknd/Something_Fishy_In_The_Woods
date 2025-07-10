@@ -1,5 +1,8 @@
 extends Node
 
+
+var selected_fish := "ATHANASIOS"
+
 var player: CharacterBody2D = null
 var player_points: int = 0
 var current_fish_on_bait: FishInstance

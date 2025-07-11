@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvm4e4jis6v4n"]
+
+[ext_resource type="Script" path="res://scripts/Interface/fish_button.gd" id="1_t6n16"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_q3td7"]
+
+[node name="FishButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(20, 20)
+texture_normal = SubResource("ImageTexture_q3td7")
+stretch_mode = 5
+script = ExtResource("1_t6n16")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

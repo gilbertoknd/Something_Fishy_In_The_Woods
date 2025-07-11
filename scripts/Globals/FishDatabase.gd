@@ -1,4 +1,5 @@
-# FishDatabase.gd
+extends Node #Para se instanciado precisa herdar de um Node, ou apresnta erro
+
 const DATA = {
 	"BAGRE": {
 		"name": "Bagre",

@@ -1,16 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2ymb32cvd2pf"]
 
-[ext_resource type="Script" path="res://scripts/fish_panel.gd" id="1_33xm5"]
+[ext_resource type="Script" path="res://scripts/Interface/fish_panel.gd" id="1_33xm5"]
 [ext_resource type="Texture2D" uid="uid://b3vi0cbphbp7v" path="res://assets/Sprites/fishs/BAGRE.png" id="1_k1noo"]
 
 [node name="FishPanel" type="Panel"]
+self_modulate = Color(0.235294, 0.470588, 1, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 416.0
 offset_top = 124.0
-offset_right = -416.0
-offset_bottom = -124.0
+offset_right = -336.0
+offset_bottom = -104.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_33xm5")
@@ -26,6 +27,7 @@ offset_bottom = 15.0
 grow_horizontal = 2
 scale = Vector2(6, 6)
 pivot_offset = Vector2(-9, -12)
+focus_neighbor_bottom = NodePath("../FishInfos")
 texture = ExtResource("1_k1noo")
 
 [node name="FishInfos" type="RichTextLabel" parent="."]
@@ -40,6 +42,7 @@ offset_top = -200.0
 offset_right = 140.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_neighbor_top = NodePath("../FishLogo")
 bbcode_enabled = true
 text = "[center]
 Nome:  Bagre,

@@ -1,7 +1,7 @@
 extends Node
 
 
-var selected_fish := "ATHANASIOS"
+var selected_fish := ""
 
 var player: CharacterBody2D = null
 var player_points: int = 0

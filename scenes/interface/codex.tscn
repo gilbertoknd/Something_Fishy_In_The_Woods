@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b2ymb32cvd2pf" path="res://scenes/interface/fish_panel.tscn" id="2_8b0ng"]
 
 [node name="Codex" type="Control"]
+visible = false
+top_level = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

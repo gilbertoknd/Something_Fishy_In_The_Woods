@@ -11,12 +11,14 @@ var can_move := true
 @onready var sprite := $AnimatedSprite2D
 @onready var Arrows := $Arrows
 @onready var water_checker := $CollisionChecker
+@onready var codex_scene = preload("res://scenes/interface/codex.tscn")
+@onready var codex_instance: Node = null 
 
 func _ready():
 	Global.player=self
 	Arrows.visible= false
 	fishOnHand.visible = false  # Esconde o peixe ao iniciar
-
+	
 func _physics_process(delta):
 	var input_vec := Vector2.ZERO
 	if not current_action in ["posing","in_fish_minigame", "sleeping"]:
@@ -53,8 +55,13 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Clique_Esquerdo") and not current_action in ["fish_on_bait","in_fish_minigame"]and is_over_water():
 		is_fishing=true
 		current_action="fishing"
-
-
+		
+	if Input.is_action_just_pressed("Codex"):
+		if codex_instance == null:
+			codex_instance = codex_scene.instantiate()
+			$InterfaceLayer.add_child(codex_instance)
+		else:
+			codex_instance.visible = not codex_instance.visible
 		
 	if not current_action in ["fish_on_bait","in_fish_minigame", "fishing"]:
 		is_fishing = false

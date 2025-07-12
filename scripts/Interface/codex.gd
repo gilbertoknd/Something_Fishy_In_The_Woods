@@ -7,6 +7,6 @@ func _ready():
 	for fish_id in FishDatabase.DATA.keys():
 		var fish_data = FishDatabase.DATA[fish_id]
 		var button = fish_button_scene.instantiate()
-		button.setup(fish_id, fish_data["sprite"])
+		button.setup(fish_id, fish_data["sprite"], $Panel/FishPanel)
 		
 		Hbox.add_child(button)

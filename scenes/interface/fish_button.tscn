@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvm4e4jis6v4n"]
 
-[ext_resource type="Script" path="res://scripts/Interface/fish_button.gd" id="1_t6n16"]
+[ext_resource type="Script" uid="uid://bobdx0t778mc8" path="res://scripts/Interface/fish_button.gd" id="1_t6n16"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_q3td7"]
 

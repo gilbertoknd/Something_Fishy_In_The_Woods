@@ -17,6 +17,6 @@ func set_fish(fish: FishInstance) -> void:
 	fish_instance = fish
 	sprite.texture = fish.get_fish_sprite()
 	
-	var scale_factor = max(0.5, round(fish.get_fish_weight() / 2))
+	var scale_factor = clamp(0.5 + fish_instance.weight * 0.2, 0.8, 2.0)
 	sprite.scale = Vector2.ONE * scale_factor
 	sprite.visible = true  # Garante que fique visível se for usado depois

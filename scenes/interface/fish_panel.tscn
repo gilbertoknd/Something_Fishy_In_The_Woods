@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2ymb32cvd2pf"]
 
-[ext_resource type="Script" path="res://scripts/Interface/fish_panel.gd" id="1_33xm5"]
+[ext_resource type="Script" uid="uid://bk1bbp8ukdveo" path="res://scripts/Interface/fish_panel.gd" id="1_33xm5"]
 [ext_resource type="Texture2D" uid="uid://b3vi0cbphbp7v" path="res://assets/Sprites/fishs/BAGRE.png" id="1_k1noo"]
 
 [node name="FishPanel" type="Panel"]

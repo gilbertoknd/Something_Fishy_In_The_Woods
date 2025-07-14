@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cr0n3xu0kckh"]
 
-[ext_resource type="Script" path="res://scripts/Interface/codex.gd" id="1_bh2jk"]
+[ext_resource type="Script" uid="uid://c7reqqmqgf3uu" path="res://scripts/Interface/codex.gd" id="1_bh2jk"]
 [ext_resource type="PackedScene" uid="uid://b2ymb32cvd2pf" path="res://scenes/interface/fish_panel.tscn" id="2_8b0ng"]
 
 [node name="Codex" type="Control"]
-visible = false
 top_level = true
 layout_mode = 3
 anchors_preset = 15

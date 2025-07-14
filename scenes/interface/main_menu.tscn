@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwu7v8anmhabo"]
+[gd_scene load_steps=5 format=3 uid="uid://cwu7v8anmhabo"]
 
 [ext_resource type="Texture2D" uid="uid://gsu1stvkmhei" path="res://assets/Sprites/logo_big_res.png" id="1_1mgp1"]
-[ext_resource type="Script" path="res://scripts/Interface/main_menu.gd" id="1_qnmr3"]
+[ext_resource type="Script" uid="uid://d2nbgv5lhdwc7" path="res://scripts/Interface/main_menu.gd" id="1_qnmr3"]
+[ext_resource type="Script" uid="uid://bu3ipjlnf7mue" path="res://scripts/Interface/Button.gd" id="2_ylig1"]
+[ext_resource type="Script" uid="uid://dl5f0sfxn0rkq" path="res://scripts/Interface/logo.gd" id="3_bvgs0"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -20,45 +22,57 @@ color = Color(0.116127, 0.116127, 0.116127, 1)
 
 [node name="ListraVerde" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 94.0
-offset_top = 2.0
-offset_right = 467.0
-offset_bottom = 648.0
+offset_left = -78.0
+offset_top = -48.0
+offset_right = 295.0
+offset_bottom = 598.0
+rotation = -0.310144
+scale = Vector2(1.04763, 2.18864)
 color = Color(0.705882, 0.72549, 0.196078, 1)
 
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 220.0
-offset_top = 308.0
-offset_right = 466.0
-offset_bottom = 568.0
-metadata/_edit_group_ = true
+offset_left = 157.0
+offset_top = 307.0
+offset_right = 407.0
+offset_bottom = 567.0
+pivot_offset = Vector2(122, 101)
+alignment = 1
 
 [node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 13
+alignment = 1
 
 [node name="IniciarButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Iniciar"
+icon_alignment = 1
+script = ExtResource("2_ylig1")
 
 [node name="ConfigButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Configurações"
+script = ExtResource("2_ylig1")
 
 [node name="SairButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Sair"
+script = ExtResource("2_ylig1")
 
 [node name="Logo" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 495.0
-offset_top = 104.0
-offset_right = 1132.0
-offset_bottom = 287.0
+offset_left = 519.0
+offset_top = 126.0
+offset_right = 1081.0
+offset_bottom = 309.0
+pivot_offset = Vector2(268, 239)
 texture = ExtResource("1_1mgp1")
 expand_mode = 3
+script = ExtResource("3_bvgs0")
 
 [node name="Devs" type="Label" parent="."]
 layout_mode = 0

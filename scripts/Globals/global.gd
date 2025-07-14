@@ -8,7 +8,8 @@ var player_points: int = 0
 var current_fish_on_bait: FishInstance
 var last_caught_fish := FishInstance.new()
 var caught_fish: Array = []
-
+# Guarda o maior peso capturado para cada fish_id
+var fish_highscores := {}
 # Estados e timers
 var fishing_timer := 0.0
 var fishing_time_limit := 0.0
@@ -120,8 +121,12 @@ func end_minigame(success: bool):
 		last_caught_fish = current_fish_on_bait
 		caught_fish.append(last_caught_fish)
 		player_points += last_caught_fish.price
-		current_fish_on_bait=null
+
+		# ✅ Atualiza o peso recorde se necessário
+		var id = last_caught_fish.fish_id
+		if not fish_highscores.has(id) or last_caught_fish.weight > fish_highscores[id]:
+			fish_highscores[id] = last_caught_fish.weight
+			
 		player.get_node("FishOnHand").set_fish(last_caught_fish)
-		print(("Pescou um peixe ")+last_caught_fish.get_fish_name()+ (" de R$ %.2f! Total de pontos: %d") % [last_caught_fish.price, player_points])
 	else:
 		print("O peixe escapou!")

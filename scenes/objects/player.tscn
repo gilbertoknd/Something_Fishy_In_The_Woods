@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://bx5n42qcksnv4"]
 
-[ext_resource type="Script" path="res://scripts/Objects/player.gd" id="1_a8lix"]
+[ext_resource type="Script" uid="uid://bfvuha1yjv1um" path="res://scripts/Objects/player.gd" id="1_a8lix"]
 [ext_resource type="Texture2D" uid="uid://vybcktffr1ej" path="res://assets/Sprites/fisherman_sheet.png" id="2_2147m"]
 [ext_resource type="PackedScene" uid="uid://cmi72kb7bkm4k" path="res://scenes/objects/FishOnHand.tscn" id="3_h5uus"]
 [ext_resource type="Texture2D" uid="uid://dp5lrjn0hdule" path="res://assets/Sprites/arrow_up.png" id="4_2rlf8"]

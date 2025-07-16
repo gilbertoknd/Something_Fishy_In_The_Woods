@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://efko3wa6vvj1"]
+[gd_scene load_steps=10 format=4 uid="uid://b11baigppp4c6"]
 
 [ext_resource type="Texture2D" uid="uid://k7ccg3ta58lh" path="res://assets/Tilemaps/forest/gentle forest v02.png" id="1_0afsd"]
 [ext_resource type="PackedScene" uid="uid://c142hmjragpp8" path="res://scenes/objects/house_exterior.tscn" id="2_bgcxa"]
 [ext_resource type="PackedScene" uid="uid://bx5n42qcksnv4" path="res://scenes/objects/player.tscn" id="3_bgcxa"]
 [ext_resource type="PackedScene" uid="uid://b4oka4qa84vgf" path="res://scenes/objects/waterBody.tscn" id="3_yj5dr"]
+[ext_resource type="PackedScene" uid="uid://bskvvvb7c3fe5" path="res://scenes/interface/day_night_cycle.tscn" id="5_ax4ho"]
+[ext_resource type="PackedScene" uid="uid://cvo67qm2cv1or" path="res://scenes/interface/day_night_cycle_ui.tscn" id="6_sek5r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yj5dr"]
 texture = ExtResource("1_0afsd")
@@ -420,3 +422,21 @@ polygon = PackedVector2Array(754, -58, 849, -147, 848, -285, 748, -287, 750, -24
 [node name="Player" parent="." instance=ExtResource("3_bgcxa")]
 z_index = 1
 position = Vector2(349, -132)
+
+[node name="DayNightCycle" parent="." instance=ExtResource("5_ax4ho")]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="DayNightCycleUI" parent="UILayer" instance=ExtResource("6_sek5r")]
+z_index = 5
+custom_minimum_size = Vector2(75, 51)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 75.0
+offset_bottom = 51.0
+grow_horizontal = 1
+grow_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="time_tick" from="DayNightCycle" to="UILayer/DayNightCycleUI" method="_on_day_night_cycle_time_tick"]

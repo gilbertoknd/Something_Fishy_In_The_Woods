@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://bu65fpkjdbf1g"]
+[gd_scene load_steps=15 format=4 uid="uid://bu65fpkjdbf1g"]
 
 [ext_resource type="Texture2D" uid="uid://d3rik75njvhjc" path="res://assets/Tilemaps/placeholder_TL.png" id="1_4xfga"]
 [ext_resource type="PackedScene" uid="uid://bx5n42qcksnv4" path="res://scenes/objects/player.tscn" id="1_paxxb"]
 [ext_resource type="PackedScene" uid="uid://b4oka4qa84vgf" path="res://scenes/objects/waterBody.tscn" id="3_gldc4"]
+[ext_resource type="PackedScene" uid="uid://bskvvvb7c3fe5" path="res://scenes/interface/day_night_cycle.tscn" id="4_wk1to"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paxxb"]
 texture = ExtResource("1_4xfga")
@@ -271,3 +272,5 @@ visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="mapa/WaterBody"]
 polygon = PackedVector2Array(659, 367, 675, 367, 678, 428, 597, 500, 322, 417, 218, 400, 179, 351, 97, 419, 95, 442, -124, 441, -135, 379, -219, 381, -291, 526, -569, 536, -561, 482, -306, 482, -301, 479, -301, 467, -285, 467, -284, 387, -268, 387, -268, 322, -17, 322, -17, 412, 15, 412, 14, 337, 34, 337, 34, 412, 61, 413, 61, 336, 82, 335, 83, 352, 112, 351, 112, 324, 251, 323, 253, 370, 393, 370, 396, 386, 410, 387, 413, 401, 428, 403, 432, 419, 654, 418, 659, 413)
+
+[node name="DayNightCycle" parent="mapa" instance=ExtResource("4_wk1to")]

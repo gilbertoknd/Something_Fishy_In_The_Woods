@@ -14,6 +14,15 @@ var can_move := true
 @onready var codex_scene = preload("res://scenes/interface/codex.tscn")
 @onready var codex_instance: Node = null 
 
+@onready var camera: Camera2D = $Camera2D
+
+# Limites de zoom
+const ZOOM_MIN = 2
+const ZOOM_MAX = 8.0
+const ZOOM_STEP = 0.5
+
+
+	
 func _ready():
 	Global.player=self
 	Arrows.visible= false
@@ -46,10 +55,10 @@ func _physics_process(delta):
 			SPEED = 100
 		
 	if Global.last_caught_fish !=null:
-		if Input.is_action_pressed("Pose"):
+		if Input.is_action_pressed("Pose") and not current_action in ["fish_on_bait","in_fish_minigame"]:
 			current_action="posing"
 
-	if Input.is_action_just_released("Pose"):
+	if Input.is_action_just_released("Pose") and not current_action in ["fish_on_bait","in_fish_minigame", "fishing"]:
 		current_action="none"
 	
 	if Input.is_action_just_pressed("Clique_Esquerdo") and not current_action in ["fish_on_bait","in_fish_minigame"]and is_over_water():
@@ -128,3 +137,16 @@ func is_over_water() -> bool:
 				return true
 	print("tem nem água zé")
 	return false
+
+func _unhandled_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			zoom_camera(-ZOOM_STEP)
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			zoom_camera(ZOOM_STEP)
+
+func zoom_camera(delta_zoom: float):
+	var new_zoom = camera.zoom + Vector2(delta_zoom, delta_zoom)
+	new_zoom.x = clamp(new_zoom.x, ZOOM_MIN, ZOOM_MAX)
+	new_zoom.y = clamp(new_zoom.y, ZOOM_MIN, ZOOM_MAX)
+	camera.zoom = new_zoom

@@ -1,20 +1,58 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvo67qm2cv1or"]
+[gd_scene load_steps=7 format=3 uid="uid://cvo67qm2cv1or"]
 
 [ext_resource type="Script" uid="uid://ht1osdd4fmwd" path="res://scripts/Interface/day_night_cycle_ui.gd" id="1_5blnw"]
+[ext_resource type="Texture2D" uid="uid://dgoakkqe800lm" path="res://assets/Sprites/daycycle-inner.png" id="2_vw6b0"]
+[ext_resource type="Texture2D" uid="uid://cfqc0pjmk7ybq" path="res://assets/Sprites/daycycle-outer.png" id="3_58seu"]
+[ext_resource type="Texture2D" uid="uid://gvty22xpkex5" path="res://assets/Sprites/player_hud.png" id="4_0ilhv"]
+[ext_resource type="FontFile" uid="uid://h07a7kkq2wm8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="5_3bou2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0gtqx"]
+font = ExtResource("5_3bou2")
+font_size = 22
 
 [node name="DayNightCycleUI" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
 grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_5blnw")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(640, 64)
+scale = Vector2(4, 4)
+texture = ExtResource("4_0ilhv")
+
+[node name="CycleWheel" type="Sprite2D" parent="."]
+position = Vector2(640, 50)
+scale = Vector2(3, 3)
+texture = ExtResource("2_vw6b0")
+
+[node name="CycleOuterLayer" type="Sprite2D" parent="."]
+position = Vector2(640, 50)
+scale = Vector2(3.3, 3.3)
+texture = ExtResource("3_58seu")
+
+[node name="IdeaPoints" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1065.0
+offset_top = 39.0
+offset_right = 1245.0
+offset_bottom = 67.0
+text = "pontos de ideias"
+label_settings = SubResource("LabelSettings_0gtqx")
+uppercase = true
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
-offset_right = 75.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_right = 37.5
 offset_bottom = 75.0
+grow_horizontal = 2
 
 [node name="CenterContainerDay" type="CenterContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -36,6 +74,7 @@ layout_mode = 2
 text = "12:00 am"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 custom_minimum_size = Vector2(75, 51)
 layout_mode = 1

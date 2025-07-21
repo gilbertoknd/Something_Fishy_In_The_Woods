@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bx5n42qcksnv4"]
+[gd_scene load_steps=33 format=3 uid="uid://bx5n42qcksnv4"]
 
 [ext_resource type="Script" uid="uid://bfvuha1yjv1um" path="res://scripts/Objects/player.gd" id="1_a8lix"]
 [ext_resource type="Texture2D" uid="uid://vybcktffr1ej" path="res://assets/Sprites/fisherman_sheet.png" id="2_2147m"]
@@ -40,6 +40,22 @@ region = Rect2(112, 0, 16, 32)
 atlas = ExtResource("2_2147m")
 region = Rect2(128, 0, 16, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4pvk"]
+atlas = ExtResource("2_2147m")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcc4x"]
+atlas = ExtResource("2_2147m")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37b34"]
+atlas = ExtResource("2_2147m")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfdn7"]
+atlas = ExtResource("2_2147m")
+region = Rect2(48, 32, 16, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5uus"]
 atlas = ExtResource("2_2147m")
 region = Rect2(144, 0, 16, 32)
@@ -71,6 +87,14 @@ region = Rect2(80, 0, 16, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuhu7"]
 atlas = ExtResource("2_2147m")
 region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeqme"]
+atlas = ExtResource("2_2147m")
+region = Rect2(64, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3mv4"]
+atlas = ExtResource("2_2147m")
+region = Rect2(80, 32, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4c2uj"]
 animations = [{
@@ -108,6 +132,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"alert_fishing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4pvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcc4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37b34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfdn7")
+}],
+"loop": true,
+"name": &"idle_prerod",
 "speed": 5.0
 }, {
 "frames": [{
@@ -151,6 +192,17 @@ animations = [{
 "loop": true,
 "name": &"walk",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xeqme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3mv4")
+}],
+"loop": true,
+"name": &"walk_prerod",
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dunks"]
@@ -191,7 +243,8 @@ rotation = 4.72698
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_4c2uj")
-animation = &"walk"
+animation = &"walk_prerod"
+frame_progress = 0.336846
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)

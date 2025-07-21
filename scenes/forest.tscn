@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b11baigppp4c6"]
+[gd_scene load_steps=17 format=4 uid="uid://b11baigppp4c6"]
 
 [ext_resource type="Texture2D" uid="uid://k7ccg3ta58lh" path="res://assets/Tilemaps/forest/gentle forest v02.png" id="1_0afsd"]
 [ext_resource type="PackedScene" uid="uid://c142hmjragpp8" path="res://scenes/objects/house_exterior.tscn" id="2_bgcxa"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b4oka4qa84vgf" path="res://scenes/objects/waterBody.tscn" id="3_yj5dr"]
 [ext_resource type="PackedScene" uid="uid://bskvvvb7c3fe5" path="res://scenes/interface/day_night_cycle.tscn" id="5_ax4ho"]
 [ext_resource type="PackedScene" uid="uid://cvo67qm2cv1or" path="res://scenes/interface/day_night_cycle_ui.tscn" id="6_sek5r"]
+[ext_resource type="PackedScene" uid="uid://224akwxebhog" path="res://scenes/objects/table.tscn" id="9_0nboi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yj5dr"]
 texture = ExtResource("1_0afsd")
@@ -1380,8 +1381,12 @@ polygon = PackedVector2Array(754, -58, 849, -147, 848, -285, 748, -287, 750, -24
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision/Terrain/StaticBody2D7"]
 polygon = PackedVector2Array(-599, 27, -503, 22, -453, 25, -297, 22, -268, 26, -262, 30, -262, 223, -311, 285, -767, 382, -877, 335, -885, 46, -864, -281, -848, -332, -467, -310, -256, -294, -251, -176, -265, -156, -264, -47, -328, -43, -532, -44, -600, -47, -605, -84, -611, -90, -632, -86, -642, -94, -661, -119, -671, -129, -646, -140, -630, -123, -611, -93, -605, -96, -601, -116, -601, -171, -688, -172, -707, -176, -765, -171, -778, -167, -779, 22, -782, 235, -780, 284, -755, 296, -615, 298, -600, 287, -600, 67)
 
-[node name="Player" parent="." instance=ExtResource("3_bgcxa")]
+[node name="table" parent="." instance=ExtResource("9_0nboi")]
 z_index = 1
+position = Vector2(442, -149)
+
+[node name="Player" parent="." instance=ExtResource("3_bgcxa")]
+z_index = 2
 position = Vector2(349, -132)
 
 [node name="DayNightCycle" parent="." instance=ExtResource("5_ax4ho")]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct0bdo3xw7jg6"]
+
+[ext_resource type="Script" uid="uid://c85yskavp8gik" path="res://scripts/Objects/rod.gd" id="1_e4j0j"]
+[ext_resource type="Texture2D" uid="uid://8l5tc1llc6sq" path="res://assets/Sprites/rod.png" id="2_u4fse"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_osqag"]
+radius = 12.0
+
+[node name="rod" type="Area2D"]
+script = ExtResource("1_e4j0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_osqag")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-07, -1.19209e-07)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_u4fse")

@@ -49,7 +49,7 @@ const DATA = {
 	},
 	"MISING": {
 		"name": "redacted",
-		"raridade": "Lendário ★★★★", 
+		"raridade": "Lendário ★★★★★", 
 		"base_price": 120,
 		"spawn_weight": 7,
 		"sprite": preload("res://assets/Sprites/fishs/missingfish.png"),
@@ -70,7 +70,7 @@ static func get_rarity_multiplier(fish_id: String) -> float:
 			return 3.0
 		"Épico ★★★★":
 			return 4.0
-		"Lendário ★★★★":
+		"Lendário ★★★★★":
 			return 4.0
 		"Histórico ★★★★★★":
 			return 6.0

@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://224akwxebhog"]
+
+[ext_resource type="Script" uid="uid://b64ot04nl4tlt" path="res://scripts/Objects/table.gd" id="1_ym3ej"]
+[ext_resource type="Texture2D" uid="uid://o247phhc1grh" path="res://assets/Sprites/table.png" id="2_mju53"]
+[ext_resource type="FontFile" uid="uid://h07a7kkq2wm8" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="3_ygku1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkakj"]
+size = Vector2(39, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrhg2"]
+atlas = ExtResource("2_mju53")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4qxm"]
+atlas = ExtResource("2_mju53")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4ovs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrhg2")
+}],
+"loop": false,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4qxm")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ym3ej"]
+size = Vector2(23.9595, 5.875)
+
+[node name="table" type="Area2D"]
+script = ExtResource("1_ym3ej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_qkakj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c4ovs")
+animation = &"broken"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -24.0
+offset_top = -17.0
+offset_right = 230.0
+offset_bottom = 6.0
+scale = Vector2(0.0705849, 0.0781584)
+theme_override_colors/font_color = Color(0.992785, 0.81551, 0.202343, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 18
+theme_override_fonts/font = ExtResource("3_ygku1")
+theme_override_font_sizes/font_size = 72
+text = "1000 pontos de ideia "
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -7)
+scale = Vector2(1.33559, 1)
+shape = SubResource("RectangleShape2D_ym3ej")

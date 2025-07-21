@@ -2,6 +2,7 @@ extends Node
 
 
 var selected_fish := ""
+var table_fixed := false
 
 var player: CharacterBody2D = null
 var player_points: int = 0
@@ -21,6 +22,9 @@ var current_clicks := 0
 var required_clicks := 0
 var expected_arrow := ""
 var arrow_sprites := ["up", "down", "left", "right"]
+
+var can_fish: bool = false
+
 
 func _process(delta):
 	if player == null:

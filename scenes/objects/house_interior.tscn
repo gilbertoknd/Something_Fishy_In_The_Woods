@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://dqlgbnp5vvaey"]
+[gd_scene load_steps=10 format=4 uid="uid://dqlgbnp5vvaey"]
 
 [ext_resource type="Texture2D" uid="uid://bwcvvo4xdv1m" path="res://assets/Tilemaps/house/walls_floor.png" id="1_v35f7"]
 [ext_resource type="Texture2D" uid="uid://c7qb38kmuxak5" path="res://assets/Tilemaps/house/Interior.png" id="2_vqn20"]
 [ext_resource type="PackedScene" uid="uid://bx5n42qcksnv4" path="res://scenes/objects/player.tscn" id="3_d0e6v"]
 [ext_resource type="PackedScene" uid="uid://bkt84vuax8e5a" path="res://scenes/objects/door.tscn" id="3_vqn20"]
+[ext_resource type="PackedScene" uid="uid://ct0bdo3xw7jg6" path="res://scenes/objects/rod.tscn" id="5_d0e6v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04x1j"]
 texture = ExtResource("1_v35f7")
@@ -436,3 +437,6 @@ polygon = PackedVector2Array(-64, 24, -55, 23, -50, 29, -52, 37, -58, 40, -63, 3
 
 [node name="Player" parent="." instance=ExtResource("3_d0e6v")]
 position = Vector2(0, 63)
+
+[node name="rod" parent="." instance=ExtResource("5_d0e6v")]
+position = Vector2(120, 15)
